@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Users/SilverKZ/Scene/SampleScene.unity
+    guid: 07b4d975306251e46b728723b03f8966
   m_configObjects: {}
