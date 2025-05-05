@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 399275752357913193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7725678657576037070}
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4979830018875312670}
   - component: {fileID: 6422251245269818915}
   - component: {fileID: 4492200428564258451}
+  - component: {fileID: 7495380278192145203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -284,7 +285,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0.24}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6422251245269818915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,22 +310,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283282309153364333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59216f4847e0e0f4fb02b8aa6e184df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 3
   _runSpeed: 6
-  _mouseSensitivity: 3
+  _mouseSensitivity: 1
   _cameraHolder: {fileID: 4080999524267234416}
   _crosshair: 1
   _crosshairObject: {fileID: 1323171700575913030}
   _crosshairImage: {fileID: 21300000, guid: c7b70fb4207cb344592b17607aadda2f, type: 3}
   _crosshairColor: {r: 1, g: 1, b: 1, a: 1}
-  _enableHeadBob: 1
+  _enableHeadBob: 0
   _bobSpeed: 10
   _bobAmount: {x: 0.05, y: 0.05, z: 0}
+--- !u!114 &7495380278192145203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283282309153364333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94b0d7a53fd77a4d9685d7ed36c5f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
 --- !u!1 &4069460307763168414
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8954659300502250378
 Transform:
   m_ObjectHideFlags: 0
