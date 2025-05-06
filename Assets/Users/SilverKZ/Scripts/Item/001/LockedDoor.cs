@@ -1,17 +1,23 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class LockedDoor : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClipNone;
 
-    [SerializeField] private GameObject _textPanel;
-    [SerializeField] private TMPro.TextMeshProUGUI _text;
     [SerializeField] private String _msg;
 
     private bool _isActive = false;
     protected Player _player;
+    private PickupTextPanel _pickupTextPanel;
+
+    [Inject]
+    private void Construct(PickupTextPanel pickupTextPanel)
+    {
+        _pickupTextPanel = pickupTextPanel;
+    }
 
     private void Start()
     {
@@ -50,8 +56,7 @@ public class LockedDoor : MonoBehaviour
     {
         if (_msg.Length > 0)
         {
-            _textPanel.SetActive(true);
-            _text.text = _msg;
+            _pickupTextPanel.Show(_msg);
         }
 
         _audioSource.PlayOneShot(_audioClipNone, 1f);
@@ -59,6 +64,6 @@ public class LockedDoor : MonoBehaviour
 
     private void ExitPickup()
     {
-        _textPanel.SetActive(false);
+        _pickupTextPanel.Hide();
     }
 }

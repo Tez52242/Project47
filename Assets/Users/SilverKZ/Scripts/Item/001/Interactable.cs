@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     private Outline _outline;
-    private bool _isActive;
+    public bool _isActive;
     protected Player _player;  
 
     private void Start() 
@@ -52,11 +52,11 @@ public class Interactable : MonoBehaviour
 
     public virtual void Pickup()
     {
-        // переопределяется в потомках
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     public virtual void ExitPickup()
     {
-        // переопределяется в потомках
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 }

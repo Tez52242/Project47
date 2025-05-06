@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Мышь
+        // пїЅпїЅпїЅпїЅ
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity;
 
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         _cameraHolder.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
-        // Скорость в зависимости от шифта
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         float currentSpeed = _walkSpeed;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -74,14 +74,14 @@ public class PlayerController : MonoBehaviour
             _isRuning = false;
         }
 
-        // Движение
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         Vector3 move = (transform.right * h + transform.forward * v).normalized;
         _controller.Move(move * currentSpeed * Time.deltaTime);
 
-        // Двигается?
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ?
         if (h != 0 || v != 0)
         {
             _isMove = true;
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
             _isMove = false;
         }
 
-        // Гравитация
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         _velocity.y += _gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
 
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
             {
                 _timer += Time.deltaTime * _bobSpeed;
             }
-            // Применяет движение HeadBob
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ HeadBob
             _cameraHolder.localPosition = new Vector3(
                 _jointOriginalPos.x + Mathf.Sin(_timer) * _bobAmount.x, 
                 _jointOriginalPos.y + Mathf.Sin(_timer) * _bobAmount.y, 
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Сбрасывается, когда останавливается
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             _timer = 0;
             _cameraHolder.localPosition = new Vector3(
                 Mathf.Lerp(_cameraHolder.localPosition.x, _jointOriginalPos.x, Time.deltaTime * _bobSpeed), 

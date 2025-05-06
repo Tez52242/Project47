@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class DoorItem : Interactable
 {
@@ -9,11 +10,17 @@ public class DoorItem : Interactable
     [SerializeField] protected AudioClip _audioClipNone;
     [SerializeField] protected AudioClip _audioClipUse;
 
-    [SerializeField] private GameObject _textPanel;
-    [SerializeField] private TMPro.TextMeshProUGUI _text;
     [SerializeField] private String _msg;
 
     private bool _isOpen = false;
+    private PickupTextPanel _pickupTextPanel;
+
+    [Inject]
+    private void Construct(PickupTextPanel pickupTextPanel)
+    {
+        _pickupTextPanel = pickupTextPanel;
+    }
+
 
     private void Start()
     {
@@ -24,7 +31,7 @@ public class DoorItem : Interactable
     {
         if (_isOpen == true) return;
 
-        if (Inventory.Instance.Ñheck(_ID) == true)
+        if (Inventory.Instance.Check(_ID) == true)
         {
             _audioSource.PlayOneShot(_audioClipUse, 1f);
             //Inventory.Instance.Remove(_ID);
@@ -35,8 +42,7 @@ public class DoorItem : Interactable
         {
             if (_msg.Length > 0)
             {
-                _textPanel.SetActive(true);
-                _text.text = _msg;
+                _pickupTextPanel.Show(_msg);
             }
 
             _audioSource.PlayOneShot(_audioClipNone, 1f);
@@ -52,7 +58,6 @@ public class DoorItem : Interactable
             _isOpen = false;
         }
 
-        _textPanel.SetActive(false);
-        
+        _pickupTextPanel.Hide();
     }
 }

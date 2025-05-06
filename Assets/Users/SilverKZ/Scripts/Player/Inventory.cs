@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
-    private List<Item> _items = new List<Item>();
+    public List<Item> _items = new List<Item>();
 
     void Awake()
     {
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         }
     }
     
-    public bool Ñheck(int id)
+    public bool Check(int id)
     {
         foreach (var item in _items)
         {

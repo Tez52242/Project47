@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AidPickup : PickupItem 
+public class AidPickup : PickableupItem 
 {
     public override void Pickup()
     {

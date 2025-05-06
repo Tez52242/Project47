@@ -3,10 +3,17 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    [SerializeField] private PlayerController _playerController;
-    [SerializeField] private Gun _gun;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
+
+    private PlayerController _playerController;
+    private Gun _gun;
+
+    private void OnEnable()
+    {
+        _playerController = FindObjectOfType<PlayerController>();
+        _gun = FindObjectOfType<Gun>();
+    }
 
     private void Update()
     {
@@ -22,7 +29,7 @@ public class Note : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         _playerController.enabled = true;
-        _gun.enabled = true;
+        if(_gun) _gun.enabled = true;
         gameObject.SetActive(false);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GunPickup : PickupItem 
+public class GunPickup : PickableupItem 
 {
     public override void Pickup()
     {

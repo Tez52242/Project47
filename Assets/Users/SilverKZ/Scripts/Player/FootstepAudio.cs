@@ -3,7 +3,7 @@ using UnityEngine;
 public class FootstepAudio : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip[] _сlips;
+    [SerializeField] private AudioClip[] _clips;
     [SerializeField] private float _walkStepDistance = 0.5f;
     [SerializeField] private float _runStepDistance = 0.3f;
 
@@ -21,7 +21,7 @@ public class FootstepAudio : MonoBehaviour
     private void Update()
     {
         Vector3 movement = transform.position - _lastPosition;
-        movement.y = 0f; // Игнорируем вертикальное движение
+        movement.y = 0f;
         float distance = movement.magnitude;
 
         if (_controller.isGrounded && distance > 0.001f)
@@ -42,7 +42,9 @@ public class FootstepAudio : MonoBehaviour
 
     void PlayFootstep(bool isRunning)
     {
-        AudioClip clip = _сlips[Random.Range(0, _сlips.Length)];
+        if(_clips.Length == 0) return;
+
+        AudioClip clip = _clips[Random.Range(0, _clips.Length)];
         _audioSource.PlayOneShot(clip, 0.3f);
     }
 }

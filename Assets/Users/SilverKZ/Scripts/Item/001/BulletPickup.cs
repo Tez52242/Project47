@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletPickup : PickupItem
+public class BulletPickup : PickableupItem
 {
     [SerializeField] private int _bulletAmount = 5;
     //[SerializeField] private AudioSource _audioSource;

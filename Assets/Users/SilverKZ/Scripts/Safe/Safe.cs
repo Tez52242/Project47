@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class Safe : Interactable
 {
@@ -18,6 +19,16 @@ public class Safe : Interactable
     private string _currentInput = "";
     private bool _isOpen;
     private bool _isError;
+    private SafeLogicView _safeLogicView;
+
+    [Inject]
+    private void Construct(UIView uiView, SafeLogicView safeLogicView)
+    {
+        _image = uiView.SafeArtImage;
+        _displayText = uiView.SafeArtText;
+        _safeLogicView = safeLogicView;
+        _safeLogicView.Initialize(this);
+    }
 
     private void Start()
     {
@@ -49,7 +60,7 @@ public class Safe : Interactable
             _isError = false;
         }
 
-        if (_currentInput.Length < 4) // ограничение длины
+        if (_currentInput.Length < 4) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         {
             _currentInput += digit;
             UpdateDisplay();
