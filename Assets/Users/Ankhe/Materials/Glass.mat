@@ -196,15 +196,15 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BASE_COLOR: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.051886775, g: 0.9873585, b: 1, a: 0.16470589}
+    - _BaseColor: {r: 0.051886797, g: 0.9873585, b: 1, a: 0.40392157}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.051886752, g: 0.9873585, b: 1, a: 0.16470589}
+    - _Color: {r: 0.051886775, g: 0.9873585, b: 1, a: 0.40392157}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
+    - _SpecColor: {r: 0.59451765, g: 0.63932997, b: 0.754717, a: 1}
   m_BuildTextureStacks: []
